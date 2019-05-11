@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0; 
+  direction: rtl;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 15px; 
+}
+a{
+  text-decoration: none !important;
+}
+/* @media only screen and (max-width: 68.75em) {
+  html {
+    font-size: 50%; 
+  } 
+} */
+body {
+  font-family: 'lalezar', 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #655A56;
+  min-height: calc(100vh - 2 * 4vw); }
+  .right{
+    float: right;
+  }
+  header{
+    background: #F08567;
+    height: 47px;
+    padding: 9px;
+  }
+  .left{
+    float:left;
+  }
+  .logo {
+    color: white;
+    float: right;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: default;
+}
+.clear-fix{
+    clear: both;
+}
+.menu{
+  float:left;
+}
+
+/* MAIN ***---
+        ------    ****/
+main{
+  display: grid;
+}
+.main__title{
+  height: 52px;
+  background-color: #66A59F;
+  width: auto;
+  text-align: center;
+}
+.main__title h2 {
+  color: gold;
+  font-size: 2em;
+  padding-top: 0.2em;
+  text-shadow: 0px 0 2px #000000;
+  cursor: default;
+}
+.tag-titles ul li {
+  height: 60px;
+  text-align: center;
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: normal;
+  color:#9A2B2B;
+  cursor: context-menu;
+}
+/*.tags {
+  width: 50%;
+}
+ .left-tags{
+  float: left;
+  background-color: #F2E2A6; 
+  border-left: #CB321D 1px solid;
+} */
+.result-titles ul li {
+  width: 100%;
+  list-style-type: none;
+  background-color: #28d7d7;
+  border: 1px solid goldenrod;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #ff9d41;
+  text-shadow: 0px 0 2px #152204;
+}
+.tags ul li{
+  width: 50%;
+  list-style-type:none;
+  background-color: #F2E2A6; 
+  border:1px solid goldenrod;
+}
+.tags ul li:nth-child(even){
+  float: left;
+}
+.tags ul li:nth-child(odd){
+  float: right;
+}
+.tag-selected {
+  background: #49c3e499 !important;
+  color: white !important;
+  transition: 0.3s;
+  text-shadow: 0 0 3px #0c003b;
+}
+footer {
+  background-color: #F08567;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+footer div {
+  padding: 1rem;
+  transform: translateY(0.5rem);
+}
+.search-btn {
+  text-shadow: 0 0 5px #9e1b1b;
+  color: beige;
+  cursor: pointer;
+}
+
+

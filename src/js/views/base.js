@@ -16,7 +16,6 @@ export const tags = [
     'گوشت قرمز',
     'پنیر پیتزا',
     'جعفری',
-    'ماست'
 ];
 
 export const foods = {

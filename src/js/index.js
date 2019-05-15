@@ -1,12 +1,13 @@
 import {elements} from './views/base';
-import {tagsView} from './views/tagsView';
-import {selectedTags} from './views/tagsView';
-import {collectSelectedTags} from './models/tags';
-import * as resultView from './views/resultView';
 //--Getting Tags
 import {tags} from './views/base';
 //--Getting foods
 import {foods} from './views/base';
+import {tagsView} from './views/tagsView';
+import {selectedTags} from './views/tagsView';
+import {collectSelectedTags} from './models/tags';
+import * as resultView from './views/resultView';
+
 
 //--filling tags controller
 tagsView(tags);

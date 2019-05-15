@@ -17,6 +17,6 @@ export const selectedTags = () => {
                 }else{
                     e.target.dataset.selected = false;
                 }
-        })    
+            })    
     });
 };

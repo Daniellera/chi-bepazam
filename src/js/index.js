@@ -29,6 +29,7 @@ const showSelectedFoods = el => {
 
     //render result UI
     resultView.renderResultUI(el);
+    
 }
 
 //get data when pushing search button

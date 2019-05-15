@@ -13,6 +13,11 @@ html {
   box-sizing: border-box;
   font-size: 15px; 
 }
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  background: #F08567;
+}
 a{
   text-decoration: none !important;
 }
@@ -21,14 +26,22 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: #655A56;
-  min-height: calc(100vh - 2 * 4vw); }
+  min-height: calc(100vh - 2 * 4vw); 
+  background: #bfbdb5;
+  }
   .right{
     float: right;
   }
-  header{
+  header {
     background: #F08567;
-    height: 47px;
-    padding: 9px;
+    height: auto;
+    padding: 10px 0px 10px;
+    display: inline-table;
+    width: 100%;
+  }
+  .menu img {
+    width: 40px;
+    margin: 25px 35px 20px;
   }
   .left{
     float:left;
@@ -40,6 +53,10 @@ body {
     font-weight: bold;
     cursor: default;
 }
+.logo img {
+  width: 95px;
+  display: grid;
+}
 .clear-fix{
     clear: both;
 }
@@ -49,8 +66,9 @@ body {
 
 /* MAIN ***---
         ------    ****/
-main{
-  display: grid;
+main {
+          display: grid;
+          background: rgb(191, 189, 181);
 }
 .main__title{
   height: 52px;
@@ -111,7 +129,7 @@ main{
   text-shadow: 0 0 3px #0c003b;
 }
 footer {
-  background-color: #F08567;
+  background: #bfbdb5;
   height: auto;
   width: 100%;
   text-align: center;
@@ -126,23 +144,48 @@ footer div {
   text-shadow: 0 0 5px #9e1b1b;
   color: beige;
   cursor: pointer;
+  box-shadow: 0px 1px 4px #000000;
+  width: 85%;
+  background: #66a49f;
+  margin: 0.5em auto 1em;
+}
+.search-btn:hover {
+  background: #1d7b73;
+  box-shadow: 0px 0px 3px #000000;
 }
   /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  
+  .wrapper{
+    width: 100%;
+  }
+  .search-btn {
+    text-shadow: 0 0 5px #9e1b1b;
+    color: beige;
+    cursor: pointer;
+    box-shadow: 0px 1px 4px #000000;
+    width: 85%;
+  }
+
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .main__title h2 {
     font-size: 2em;
   }
+  
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-
+  header {
+    background: #bfbdb5;
+    display: grid;
+  }
+  .search-btn {
+    width: 25%
+  }
 }
 
 /* Large devices (large desktops, 1200px and up) */

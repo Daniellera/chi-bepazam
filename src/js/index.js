@@ -1,3 +1,4 @@
+navigator.serviceWorker.register('../sw.js')
 import {elements} from './views/base';
 //--Getting Tags
 import {tags} from './views/base';

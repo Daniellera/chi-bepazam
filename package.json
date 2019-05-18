@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "http-server -c-l -p 9000"
+    "start": "http-server ./dist -c10 -o -p 80"
   },
   "author": "Daniellera",
   "license": "ISC",

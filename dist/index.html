@@ -9,6 +9,16 @@
     <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <title>چی بپزم؟</title>
+    <!-- mainfest codes -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PWAGram">
+    <link rel="apple-touch-icon" href="img/chi-bepazam-logo.png" sizes="500x500">
+    <meta name="msapplication-TileImage" content="/img/chi-bepazam-logo.png">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="#3f51b5">
+    <!-- mainfest codes -->
 </head>
 
 <body>
@@ -43,18 +53,22 @@
     </div>
     <div class="results-section" style="display:none">
         <main>
-            <div class="main__title">
-                <h2>اینا رو میتونی درست کنی:</h2>
+            <div class="wrapper">
+                <div class="main__title">
+                    <h2>اینا رو میتونی درست کنی:</h2>
+                </div>
+                <div class="result-titles">
+                        <ul>
+                            <!-- Result will place here -->
+                        </ul>
+                </div>
             </div>
-            <div class="result-titles">
-                    <ul>
-                        <!-- Result will place here -->
-                    </ul>
+            </main>
+            <div class="wrapper">
+                <footer class="first-footer">
+                    <a href="./index.html">بازگشت به صفحه اول</a>  
+                </footer>
             </div>
-        </main>
-        <footer class="first-footer">
-            <a href="./index.html">بازگشت به صفحه اول</a>  
-        </footer>
     </div>
     <!-- IT will automatically add this code when we run the html webpack plugin<script  src="js/bundle.js"></script> -->
 <script type="text/javascript" src="js/bundle.js"></script></body>

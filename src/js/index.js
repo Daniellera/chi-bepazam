@@ -3,6 +3,7 @@ import {elements} from './views/base';
 import {tags} from './views/base';
 //--Getting foods
 import {foods} from './views/base';
+import {foodsURL} from './views/base';
 import {tagsView} from './views/tagsView';
 import {selectedTags} from './views/tagsView';
 import {collectSelectedTags} from './models/tags';
@@ -28,7 +29,7 @@ const showSelectedFoods = el => {
     resultView.makeNewUI()
 
     //render result UI
-    resultView.renderResultUI(el);
+    resultView.renderResultUI(el,foodsURL);
     
 }
 
@@ -50,7 +51,7 @@ elements.searchBtn.addEventListener('click',() =>{
                 selectedOnes.push(el);
             }
     })
-    console.log(selectedOnes)
+    window.elements = selectedOnes;
     showSelectedFoods(selectedOnes);    
 })
 

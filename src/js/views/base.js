@@ -1,4 +1,5 @@
 export const elements = {
+    PWABtn: document.querySelector('.PWA-btn'),
     searchBtn: document.querySelector('.search-btn'),
     tagsSection: document.querySelector('.tags ul'),
     firstSection: document.querySelector('.first-section'),

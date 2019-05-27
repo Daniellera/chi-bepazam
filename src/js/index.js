@@ -1,4 +1,5 @@
 import {elements} from './views/base';
+import {pwaPrevent} from "./models/pwa-install";
 //--Getting Tags
 import {tags} from './views/base';
 //--Getting foods

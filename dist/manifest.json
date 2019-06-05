@@ -1,0 +1,20 @@
+{
+    "name": "چی بپزم؟",
+    "short_name": "چی بپزم؟",
+    "icons": [
+      {
+        "src": "./img/chi-bepazam-logo.png",
+        "type": "image/png",
+        "sizes": "500x500"
+      }
+    ],
+    "start_url": "./index.html",
+    "scope": ".",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "background_color": "#bfbdb5",
+    "theme_color": "#F08567",
+    "description": "This app give you suggestions to cock according to ingredients available at home.",
+    "dir": "rtl",
+    "lang": "fa-IR"
+  }

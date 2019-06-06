@@ -3,7 +3,7 @@ var deferredPrompt;
 //check if there is no service worker install one
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/sw.js')
+    .register('sw.js')
     .then(function() {
       console.log('Service worker registered!');
     });
@@ -52,9 +52,10 @@ elements.PWACloseAlertBtn.addEventListener("click",() => {
   elements.footer.style.display = "initial";
   elements.mainContent.style.transition = "1s";
 }) 
-//when application runs
+//when application runs (not app on browser)
 if (window.matchMedia('(display-mode: standalone)').matches) {
   
+  //by using this localstorage method we execute code once 
   var alerted = localStorage.getItem('alerted') || '';
   if (alerted != 'yes') {
    alert(" در آینده نزدیک اطلاعات غذاهای بیشتر بصورت خودکار به برنامه اضافه خواهد شد.");

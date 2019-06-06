@@ -1,21 +1,25 @@
-const appShell,dynamic;
-appShell = "appShell-v" + "1";
-dynamic = "dynamic-v" + "1"
+let appShell,dynamic;
+appShell = "appShell-v" + "1.2";
+dynamic = "dynamic-v" + "1.2";
+
 self.addEventListener('install', function(event) {
   console.log('[Service Worker] Installing Service Worker ...', event);
   event.waitUntil(caches.open(appShell)
   .then( e => {
     e.addAll([
       "/",
-      "index.html",
+      "/index.html",
+      "/offline.html",
       "./js/bundle.js",
       "./css/style.css",
       "./img/chi-bepazam-logo-apple.png",
       "./img/chi-bepazam-logo.png",
-      "./img/daniellera.png",
+      "./img/daniellera-logo.png",
     ])
   }))
 });
+
+
 
 self.addEventListener('activate', function(event) {
   console.log('[Service Worker] Activating Service Worker ....', event);
@@ -35,6 +39,9 @@ self.addEventListener('activate', function(event) {
   return self.clients.claim();
 });
 
+
+
+
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then( e => {
@@ -51,7 +58,13 @@ self.addEventListener('fetch', function(event) {
             });
           })
           .catch(err => {
-          })
+            return caches.open(appShell)
+            .then( e =>{
+              return e.match("/offline.html")
+            }).catch( e => {
+              console.log("ye chizi moshkel dare inja", e);
+            })
+          });
       }
     })
   );

@@ -1,5 +1,4 @@
 import {elements} from './base';
-import {foods} from './base';
 
 export const removeUI = () => {
     elements.firstSection.innerHTML = "";
@@ -7,7 +6,7 @@ export const removeUI = () => {
 export const makeNewUI = () => {
     elements.resultsSection.style = ('display','block');
 }
-export const renderResultUI = (el,url) => {
+export const renderResultUI = (el,url,foods) => {
     let markup;
     if(el.length === 0){
         markup = "<li>با این چیزایی که خونه داری باید تلفن را برداری زنگ بزنی رستوران</li>";

@@ -1,4 +1,5 @@
-import {elements} from './base'
+import {elements} from './base';
+
 export const tagsView = (array) => {
     array.forEach(element => {
         const markup = `

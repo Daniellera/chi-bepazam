@@ -46,6 +46,7 @@ if(!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform) &&
   elements.mainContent.style.display = "none";
   elements.footer.style.display = "none";
 };
+// close button for app installing instruction for iphone
 elements.PWACloseAlertBtn.addEventListener("click",() => {
   elements.iosAlert.style.display = "none";
   elements.mainContent.style.display = "initial";
@@ -60,6 +61,5 @@ if (window.matchMedia('(display-mode: standalone)').matches) {
   if (alerted != 'yes') {
    alert(" در آینده نزدیک اطلاعات غذاهای بیشتر بصورت خودکار به برنامه اضافه خواهد شد.");
    localStorage.setItem('alerted','yes');
-  }
-  
+  } 
 }  

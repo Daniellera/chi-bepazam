@@ -62,8 +62,7 @@ self.addEventListener('activate', function(event) {
 
 
 self.addEventListener('fetch', function(event) {
- //inja alan in kar nemikone chon ma toye in app niazi behesh nadarim
-  let url = "https://httpbin.org/ip";
+  let url = "./data/food-additives.json";
 
   if(event.request.url.indexOf(url) > -1){
     event.respondWith(

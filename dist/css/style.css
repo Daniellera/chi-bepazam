@@ -247,7 +247,9 @@ footer div {
 	top:1px;
 }
 .results-section{
+  transform: translateX(100vw);
   transition: 1s;
+  display:none;
 }
   /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */

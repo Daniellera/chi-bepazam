@@ -1,10 +1,12 @@
 import {elements} from './base';
+import { setTimeout } from 'timers';
 
 export const removeUI = () => {
     elements.firstSection.innerHTML = "";
 }
 export const makeNewUI = () => {
-    elements.resultsSection.style = ('display','block');
+    setTimeout(elements.resultsSection.style.display = "block",0.5);
+    elements.resultsSection.style.transform = 'translateX(0vw)';
 }
 export const renderResultUI = (el,url,foods) => {
     let markup;

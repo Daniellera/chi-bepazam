@@ -1,6 +1,7 @@
-let static,dynamic;
-static = "static-v" + "1.1";
-dynamic = "dynamic-v" + "1.1";
+let static,dynamic,v;
+v = 1.7;
+static = "static-v" + v;
+dynamic = "dynamic-v" + v;
 
 //FUNCTIONS
 //Cache Triming Function
@@ -23,7 +24,7 @@ function trimCache(cache_name,max_items){
 self.addEventListener('install', function(event) {
   console.log('[Service Worker] Installing Service Worker ...', event);
   event.waitUntil(caches.open(static)
-  .then( e => {
+  .then(e => {
     e.addAll([
       "/",
       "/index.html",
@@ -33,7 +34,7 @@ self.addEventListener('install', function(event) {
       "./img/chi-bepazam-logo-apple.png",
       "./img/dummy.png",
       "./img/chi-bepazam-logo.png",
-      "./img/daniellera-logo.png"
+      "/img/Odin-codes-logo.png"
     ])
   }))
 });
@@ -54,11 +55,8 @@ self.addEventListener('activate', function(event) {
     })
   )
 
-
   return self.clients.claim();
 });
-
-
 
 
 self.addEventListener('fetch', function(event) {
@@ -72,13 +70,22 @@ self.addEventListener('fetch', function(event) {
         .then(e => {
         //  trimCache(dynamic, 200); //WE DONT NEED TO DELETE ANYTHING FOR THIS APP
           res.put(event.request.url, e.clone());
+          console.log("alan json ro online gerefte va dare mide");
           return e;
         })
+        .catch(err => {
+          console.log("man kardam alannnn?");
+          caches.match(event.request)
+          .then(e => {
+            return e;
+          })
+        })
       })
-    );
+    )
   }else{
     event.respondWith(
       caches.match(event.request).then( e => {
+        //if mizarim chon null mishe vaghti nabashe
         if (e) {
           console.log("inha ro peida kardim ke offline estefade besehe:" + e);
           return e;

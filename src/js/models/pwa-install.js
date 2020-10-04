@@ -1,9 +1,13 @@
 import {elements} from "../views/base";
 var deferredPrompt;
+
+//this will add install button for browsers that supports prompt() command.
+document.querySelector("body").insertAdjacentHTML('beforeend', '<button style="display: none; position: fixed; z-index: 2; width: 100%; bottom: 0; font-size: 1.2em; font-weight: bold; padding: 3px;" class="PWA-btn">Install Website App</button>');
+
 //check if there is no service worker install one
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('sw.js')
+    .register('./sw.js')
     .then(function() {
       console.log('Service worker registered!');
     });
@@ -20,24 +24,24 @@ window.addEventListener('beforeinstallprompt', function(event) {
   return false;
 });
 // triggers the save app banner and console log the result
-  elements.PWABtn.addEventListener("click",() => {
-    if (deferredPrompt) {
-        
-        deferredPrompt.prompt();
-    
-        deferredPrompt.userChoice.then(function(choiceResult) {
-          console.log(choiceResult.outcome);
-    
-          if (choiceResult.outcome === 'dismissed') {
-            console.log('User cancelled installation');
-          } else {
-            console.log('User added to home screen');
-          }
-        });
-    
-        deferredPrompt = null;
-    }
-  })
+elements.PWABtn.addEventListener("click",() => {
+  if (deferredPrompt) {
+      
+      deferredPrompt.prompt();
+  
+      deferredPrompt.userChoice.then(function(choiceResult) {
+        console.log(choiceResult.outcome);
+  
+        if (choiceResult.outcome === 'dismissed') {
+          console.log('User cancelled installation');
+        } else {
+          console.log('User added to home screen');
+        }
+      });
+  
+      deferredPrompt = null;
+  }
+})
 
 //detects whether the phone is apple and show the save app message
 if(!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform) &&
@@ -53,7 +57,7 @@ elements.PWACloseAlertBtn.addEventListener("click",() => {
   elements.footer.style.display = "initial";
   elements.mainContent.style.transition = "1s";
 }) 
-//when application runs (not app on browser)
+//when application runs (not browser)
 if (window.matchMedia('(display-mode: standalone)').matches) {
   
   //by using this localstorage method we execute code once 
@@ -63,3 +67,4 @@ if (window.matchMedia('(display-mode: standalone)').matches) {
    localStorage.setItem('alerted','yes');
   } 
 }  
+

@@ -14,7 +14,7 @@
     "orientation": "portrait-primary",
     "background_color": "#bfbdb5",
     "theme_color": "#F08567",
-    "description": "This app give you suggestions to cock according to ingredients available at home.",
+    "description": "This app give you suggestions to cook according to ingredients available at home.",
     "dir": "rtl",
     "lang": "fa-IR"
   }
